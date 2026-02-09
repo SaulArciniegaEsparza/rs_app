@@ -219,7 +219,7 @@ dataset_selection = st.sidebar.multiselect(
 
 st.markdown(f"**Mapa de {variable_selection} media anual con la base de datos {map_dataset_selection}**")
 fig = create_map(variable_selection, map_dataset_selection)
-selected_geometry = st.plotly_chart(fig, width="stretch", on_select="rerun")
+selected_geometry = st.plotly_chart(fig, use_container_width=True, on_select="rerun")
 
 if selected_geometry["selection"]["points"] and dataset_selection:
     idx = selected_geometry["selection"]["points"][0]["properties"]["id"]
@@ -232,7 +232,7 @@ if selected_geometry["selection"]["points"] and dataset_selection:
 
         time_serie = load_serie(id_aquifer, dataset_selection, variable_selection, timestep_selection)
         fig1 = create_plot(time_serie, variable_selection)
-        st.plotly_chart(fig1, width="stretch")
+        st.plotly_chart(fig1, use_container_width=True)
 
         output = download_data(time_serie)
         st.download_button(

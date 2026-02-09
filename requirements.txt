@@ -2,4 +2,4 @@ pandas
 plotly
 streamlit
 toml
-altair
+altair<5

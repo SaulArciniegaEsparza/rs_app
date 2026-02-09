@@ -3,6 +3,7 @@
 base="light"
 primaryColor="#14266A"
 secondaryBackgroundColor="#66A6C9"
+textColor = "#000000"
 
 [server]
 port = 8501

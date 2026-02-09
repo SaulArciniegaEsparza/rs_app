@@ -23,5 +23,5 @@ df = pd.read_csv(filename, delimiter=";")
 st.title("Bases de datos disponibles")
 st.markdown("Se enlista a continuación las bases de datos disponibles actuales en SUPRAM.")
 
-st.dataframe(df, use_container_width=True)
+st.dataframe(df, width="stretch")
 

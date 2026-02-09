@@ -178,7 +178,7 @@ gmode = st.sidebar.checkbox("Agrupar por año")
 
 st.markdown(f"**Mapa de uso de suelo de {lc_selection} con {dataset_selection}**")
 fig = create_map(dataset_selection, lc_selection)
-selected_geometry = st.plotly_chart(fig, use_container_width=True, on_select="rerun")
+selected_geometry = st.plotly_chart(fig, width="stretch", on_select="rerun")
 
 if selected_geometry["selection"]["points"]:
     idx = selected_geometry["selection"]["points"][0]["properties"]["id"]
@@ -192,10 +192,10 @@ if selected_geometry["selection"]["points"]:
         lc_table = load_serie(id_aquifer, dataset_selection, threshold)
 
         lc_fig = create_plot(lc_table, dataset_selection, gmode)
-        st.plotly_chart(lc_fig, use_container_width=True)
+        st.plotly_chart(lc_fig, width="stretch")
 
         with st.expander("Tabla de covertura de suelo"):
-            st.dataframe(lc_table, hide_index=True, use_container_width=True)
+            st.dataframe(lc_table, hide_index=True, width="stretch")
 
 
         output = download_data(lc_table)

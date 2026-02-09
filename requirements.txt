@@ -1,5 +1,6 @@
-pandas
+pandas<2.0
 plotly
 streamlit<1.22.0
 toml
 altair<5
+pyarrow<14.0.0
